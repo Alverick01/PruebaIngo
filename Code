@@ -100,13 +100,15 @@ if hora.__len__() == 6 or hora.__len__() == 7  :    #valida la longitud correcta
     if hora[-2:] == "am" or hora[-2:] == "pm":      #valida que se indique si es am ó pm
         if int(hora[-4:-2]) < 60:                   #valida que los minutos esten dados en la cantidad correcta
             if int(hora[-7:-5]) < 13:               #valida que las horas esten dadas en la cantidad correcta
-                if hora[-7:-5]=="12" and hora[-4:-2]=="00" and hora[-2:]=="pm":       #valida si es medio dia
+                if hora[-7:-5]=="12" and hora[-4:-2]=="00" and hora[-2:]=="pm": #valida si es medio dia
                     print("Es Medio Dia")
-                elif hora[-7:-5]=="12" and hora[-4:-2]=="00" and hora[-2:]=="am":     #valida si es medianoche
+                elif hora[-7:-5]=="12" and hora[-4:-2]=="00" and hora[-2:]=="am":#valida si es medianoche
                     print("Es Media Noche")
-                elif hora[-4:-2]=="00":                                               #valida si las horas son en punto
+                elif hora[-4:-2]=="00":               #valida si las horas son en punto
                     print("Son"+ horas(hora[-7:-5])+" "+ "En Punto" + " de la " + horario(hora[-2:]))
-                else :
+                elif int(hora[-7:-5])>5 and int(hora[-7:-5]) < 12 and hora[-2:]=="pm":
+                        print("Son"+ horas(hora[-7:-5])+" "+ minutos(hora[-4:-2]) + " de la " + "Noche")
+                else:
                     print("Son"+ horas(hora[-7:-5])+" "+ minutos(hora[-4:-2]) + " de la " + horario(hora[-2:]))
             else:
                 print("Ingrese horas validas entre 0 y 12")
@@ -116,4 +118,5 @@ if hora.__len__() == 6 or hora.__len__() == 7  :    #valida la longitud correcta
         print("Ingrese si la hora es 'am' ó 'pm', por ejemplo: 10:07am ó 3:57pm ")
 else : 
     print("Ingrese una hora en el formato de 12 Hrs, por ejemplo: 10:07am ó 3:57pm ")
+
 
