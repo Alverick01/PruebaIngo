@@ -105,11 +105,12 @@ if hora.__len__() == 6 or hora.__len__() == 7  :    #valida la longitud correcta
                     print("Son"+ horas(hora[-7:-5])+" "+ "En Punto" + " de la " + horario(hora[-2:]))
                 else :
                     print("Son"+ horas(hora[-7:-5])+" "+ minutos(hora[-4:-2]) + " de la " + horario(hora[-2:]))
-            else:
-                print("Ingrese horas validas entre 0 y 12")
-        else:
+            else:                                                                   #de aqui en adelante 
+                print("Ingrese horas validas entre 0 y 12")                         #se muestran los posibles
+        else:                                                                       #mensajes ante errores
             print("Ingrese minutos validos menores a 60 y mayores a 0")
     else:
         print("Ingrese si la hora es 'am' ó 'pm', por ejemplo: 10:07am ó 3:57pm ")
 else : 
     print("Ingrese una hora en el formato de 12 Hrs, por ejemplo: 10:07am ó 3:57pm ")
+
